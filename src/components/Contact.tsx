@@ -60,7 +60,10 @@ export default function Contact() {
     } catch (error) {
       setSubmitMessage({
         type: "error",
-        text: error instanceof Error ? error.message : "Nastala chyba při odesílání zprávy.",
+        text:
+          error instanceof Error
+            ? error.message
+            : "Nastala chyba při odesílání zprávy.",
       });
     } finally {
       setIsSubmitting(false);
@@ -68,12 +71,20 @@ export default function Contact() {
   }
 
   return (
-    <section id="kontakt" className="py-20 relative overflow-hidden">
-      <BackgroundBeams className="opacity-30" />
+    <section
+      id="kontakt"
+      className="py-24 relative overflow-hidden bg-neutral-100"
+    >
+      <BackgroundBeams className="opacity-20" />
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Kontaktujte nás</h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <h2 className="text-3xl md:text-5xl font-bold">
+            Začněte svou{" "}
+            <span className="bg-gradient-to-r from-sky-500 to-blue-600 bg-clip-text text-transparent">
+              transformaci
+            </span>
+          </h2>
+          <p className="text-lg text-neutral-600 max-w-2xl mx-auto mt-4">
             Máte dotaz nebo projekt, na kterém byste chtěli spolupracovat?
             Neváhejte nás kontaktovat.
           </p>
@@ -83,29 +94,34 @@ export default function Contact() {
           {/* Contact Information */}
           <div className="space-y-6">
             <div>
-              <h3 className="text-2xl font-semibold mb-6">Kontaktní informace</h3>
+              <h3 className="text-2xl font-semibold mb-6 text-neutral-900">
+                Kontaktní informace
+              </h3>
               <div className="space-y-4">
                 <div className="flex items-start gap-4">
-                  <Mail className="h-5 w-5 text-primary mt-1" />
+                  <Mail className="h-5 w-5 text-sky-600 mt-1" />
                   <div>
-                    <p className="font-medium">E-mail</p>
-                    <p className="text-muted-foreground">info@datovee.cz</p>
+                    <p className="font-medium text-neutral-900">E-mail</p>
+                    <p className="text-neutral-600">info@datovee.cz</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
-                  <Phone className="h-5 w-5 text-primary mt-1" />
+                  <Phone className="h-5 w-5 text-sky-600 mt-1" />
                   <div>
-                    <p className="font-medium">Telefon</p>
-                    <a href="tel:+420720353874" className="text-muted-foreground hover:text-primary transition-colors">
+                    <p className="font-medium text-neutral-900">Telefon</p>
+                    <a
+                      href="tel:+420720353874"
+                      className="text-neutral-600 hover:text-sky-600 transition-colors"
+                    >
                       +420 720 353 874
                     </a>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
-                  <MapPin className="h-5 w-5 text-primary mt-1" />
+                  <MapPin className="h-5 w-5 text-sky-600 mt-1" />
                   <div>
-                    <p className="font-medium">Adresa</p>
-                    <p className="text-muted-foreground">Praha, Česká republika</p>
+                    <p className="font-medium text-neutral-900">Adresa</p>
+                    <p className="text-neutral-600">Praha, Česká republika</p>
                   </div>
                 </div>
               </div>
@@ -126,7 +142,11 @@ export default function Contact() {
                     <FormItem>
                       <FormLabel>Jméno</FormLabel>
                       <FormControl>
-                        <Input placeholder="Vaše jméno" {...field} />
+                        <Input
+                          className="bg-background"
+                          placeholder="Vaše jméno"
+                          {...field}
+                        />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -141,6 +161,7 @@ export default function Contact() {
                       <FormControl>
                         <Input
                           type="email"
+                          className="bg-background"
                           placeholder="vas@email.cz"
                           {...field}
                         />
@@ -180,7 +201,7 @@ export default function Contact() {
                 <Button
                   type="submit"
                   size="lg"
-                  className="w-full"
+                  className="w-full bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-600 hover:to-blue-700 border-0 text-white"
                   disabled={isSubmitting}
                 >
                   {isSubmitting ? "Odesílám..." : "Odeslat zprávu"}
@@ -193,4 +214,3 @@ export default function Contact() {
     </section>
   );
 }
-

@@ -25,19 +25,19 @@ export default function Header() {
         <nav className="hidden md:flex items-center gap-6 absolute right-4">
           <button
             onClick={() => scrollToSection("sluzby")}
-            className="text-sm font-medium transition-colors hover:text-primary"
+            className="text-sm font-medium transition-colors hover:text-primary cursor-pointer"
           >
             Služby
           </button>
           <button
             onClick={() => scrollToSection("projekty")}
-            className="text-sm font-medium transition-colors hover:text-primary"
+            className="text-sm font-medium transition-colors hover:text-primary cursor-pointer"
           >
             Projekty
           </button>
           <button
             onClick={() => scrollToSection("kontakt")}
-            className="text-sm font-medium transition-colors hover:text-primary"
+            className="text-sm font-medium transition-colors hover:text-primary cursor-pointer"
           >
             Kontakt
           </button>
@@ -65,19 +65,19 @@ export default function Header() {
           <nav className="container flex flex-col gap-4 px-4 py-4">
             <button
               onClick={() => scrollToSection("sluzby")}
-              className="text-left text-sm font-medium transition-colors hover:text-primary"
+              className="text-left text-sm font-medium transition-colors hover:text-primary cursor-pointer"
             >
               Služby
             </button>
             <button
               onClick={() => scrollToSection("projekty")}
-              className="text-left text-sm font-medium transition-colors hover:text-primary"
+              className="text-left text-sm font-medium transition-colors hover:text-primary cursor-pointer"
             >
               Projekty
             </button>
             <button
               onClick={() => scrollToSection("kontakt")}
-              className="text-left text-sm font-medium transition-colors hover:text-primary"
+              className="text-left text-sm font-medium transition-colors hover:text-primary cursor-pointer"
             >
               Kontakt
             </button>
