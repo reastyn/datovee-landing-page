@@ -265,11 +265,11 @@ function ProblemSection() {
           {problems.map((problem, index) => (
             <motion.div
               key={problem.title}
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.5 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group rounded-2xl border border-neutral-200 bg-neutral-50 p-6 transition-all hover:border-sky-500/30 hover:bg-sky-500/5"
+              className="group rounded-2xl border border-neutral-200 bg-neutral-50 p-6 hover:border-sky-500/30 hover:bg-sky-500/5 transition-colors"
             >
               <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-sky-500/10 text-sky-600 transition-colors group-hover:bg-sky-500/20">
                 {problem.icon}
@@ -569,13 +569,13 @@ function BenefitsSection() {
           {benefits.map((benefit, index) => (
             <motion.div
               key={benefit.title}
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.5 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group flex flex-col items-center rounded-2xl border border-neutral-200 bg-white p-6 text-center transition-all hover:border-sky-500/30"
+              className="group flex flex-col items-center rounded-2xl border border-neutral-200 bg-white p-6 text-center hover:border-sky-500/30 transition-colors"
             >
-              <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-xl bg-sky-500/10 text-sky-600 transition-all group-hover:bg-sky-500/20 group-hover:scale-110">
+              <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-xl bg-sky-500/10 text-sky-600 transition-transform duration-200 group-hover:bg-sky-500/20 group-hover:scale-110">
                 {benefit.icon}
               </div>
               <h3 className="mb-2 font-semibold">{benefit.title}</h3>
